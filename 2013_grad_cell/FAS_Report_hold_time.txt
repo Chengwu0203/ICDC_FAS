@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : FAS
+Version: S-2021.06-SP2
+Date   : Mon Jan 17 23:38:38 2022
+****************************************
+
+Operating Conditions: fast   Library: fast
+Wire Load Model Mode: top
+
+  Startpoint: clk_r_REG858_S3
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: analysis_filter/clk_r_REG859_S4
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FAS                tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  clk_r_REG858_S3/CK (DFFRX1)                             0.00       1.00 r
+  clk_r_REG858_S3/Q (DFFRX1)                              0.47       1.47 r
+  analysis_filter/fft_valid (ANALYSIS)                    0.00       1.47 r
+  analysis_filter/clk_r_REG859_S4/D (DFFSX1)              0.00       1.47 r
+  data arrival time                                                  1.47
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  clock uncertainty                                       1.00       2.00
+  analysis_filter/clk_r_REG859_S4/CK (DFFSX1)             0.00       2.00 r
+  library hold time                                      -0.06       1.94
+  data required time                                                 1.94
+  --------------------------------------------------------------------------
+  data required time                                                 1.94
+  data arrival time                                                 -1.47
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.47
+
+
+1
